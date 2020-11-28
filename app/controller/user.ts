@@ -1,7 +1,7 @@
 /*
  * @Author: jianwen.Wang
  * @Date: 2020-11-28 10:46:18
- * @LastEditTime: 2020-11-28 16:15:30
+ * @LastEditTime: 2020-11-28 18:01:15
  * @LastEditors: jiawen.wang
  */
 import { Controller } from 'egg';
@@ -15,8 +15,19 @@ export default class UserController extends Controller {
         // ctx.body = { publicKey: publicKey };
     }
     public async login() {
-        // const { ctx, app } = this;
-        // console.log(app)
-        // ctx.body = { logger, app };
+        const { app, ctx } = this;
+        console.log({ object: app })
+        // const loginRule = {
+        //     username: { type: 'string' },
+        //     password: { type: 'string' }
+        // }
+        try {
+            // ctx.validate(loginRule);
+            const req = ctx.request.body;
+            const res = await ctx.service.user.getInfo(req)
+            ctx.body = res;
+        } catch (err) {
+            throw err
+        }
     }
 };

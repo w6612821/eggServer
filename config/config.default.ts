@@ -1,7 +1,7 @@
 /*
  * @Author: jianwen.Wang
  * @Date: 2020-11-28 10:43:26
- * @LastEditTime: 2020-11-28 16:08:35
+ * @LastEditTime: 2020-11-28 16:45:35
  * @LastEditors: jiawen.wang
  */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
